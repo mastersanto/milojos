@@ -1,5 +1,5 @@
-var Marker = Backbone.Model.extend({
-  //default attributes 
+var MarkerModel = Backbone.Model.extend({
+  /* 
 	defaults:{
 		id:'',
 		type:'',
@@ -7,5 +7,5 @@ var Marker = Backbone.Model.extend({
 		description:'',
 		latitude:'',
 		longitude:''
-	}
+	}*/
 });
