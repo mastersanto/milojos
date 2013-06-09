@@ -166,16 +166,23 @@ input.rounded {
 	padding: 4px 7px;
 	outline: 0;
 	-webkit-appearance: none;
-        position: absolute;
-        z-index: 999;
-        margin-top: 6px;
-        right: 3px;
+    position: absolute;
+    z-index: 999;
+    margin-top: 6px;
+    right: 3px;
 }
 input.rounded:focus {
 	border-color: #339933;
 }
 
- label {
-            display: block;
-            margin: .5em 0 0 0;
- }
+label {
+    display: block;
+    margin: .5em 0 0 0;
+}
+
+#sendIssues {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
