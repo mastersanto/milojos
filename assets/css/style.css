@@ -50,19 +50,17 @@ ul{
 	z-index: 5;
 	position: relative;
 }
-
 #actions > li > a { 
 	background-color: #3ab504;
 }
-
 #actions > li > a:hover,
 #actions > li > a.active {
 	background-color: #49ec01;
 }
-#actions li a span.milIcon {
+#actions > li > a span.milIcon {
 	display: inline-block;
-	width: 74px;
-	height: 73px;
+	width: 67px;
+	height: 68px;
 	margin-right: .75em;
 }
 #actions li ul.submenu {
@@ -77,11 +75,9 @@ ul{
 	display: block!important;
 	z-index: 4;
 }
-
 #actions li ul.submenu.hidden {
 	bottom: 0;
 }
-
 #actions ul.submenu li {
 	display: inline-block;
 	width: 33%;
@@ -92,12 +88,27 @@ ul{
 }
 #actions ul.submenu li a span.milIcon {
 	display: block;
+	width: 74px;
+	height: 73px;
 	margin: 0 auto .25em;
 }
 .milIcon {
 	background-image: url('images/milSprite.png');
 	background-repeat: no-repeat;
-	background-color: #f00;
+}
+.reportsIcon {
+	background-position: -444px 0;
+}
+#reportsBtn:hover .reportsIcon,
+#reportsBtn.active .reportsIcon {
+	background-position: -444px -68px;
+}
+.reportIcon {
+	background-position: -511px 0;
+}
+#reportBtn:hover .reportIcon,
+#reportBtn.active .reportIcon {
+	background-position: -511px -68px;
 }
 .rapIcon {
 	background-position: 0 0;
