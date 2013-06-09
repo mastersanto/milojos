@@ -1,6 +1,8 @@
 define(['backbone'], function(Backbone) {
 
-	return Backbone.Model.extend({
+	var model = Backbone.Model.extend({
 		url: 'api/issues'
 	});
+
+	return new model();
 });

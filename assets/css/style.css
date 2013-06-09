@@ -23,19 +23,22 @@ ul{
 
 .boton {display: inline-block;}
 
-#actions {
+#actions,
+#navControls {
 	position: absolute;
 	bottom : 0;
 	left: 0;
 	width: 100%;
 }
 
-#actions li {/*
+#actions li,
+#navControls li {/*
 	display: inline-block;*/
 	float: left;
 	width: 50%;
 }
-#actions li a {
+#actions li a,
+#navControls li a {
 	border-width: 2px 1px;
 	border-color: #000;
 	border-style: solid;
@@ -50,11 +53,14 @@ ul{
 	z-index: 5;
 	position: relative;
 }
-#actions > li > a { 
+#actions > li > a,
+#navControls li a { 
 	background-color: #3ab504;
 }
 #actions > li > a:hover,
-#actions > li > a.active {
+#actions > li > a.active,
+#navControls > li > a:hover,
+#navControls > li > a.active {
 	background-color: #49ec01;
 }
 #actions > li > a span.milIcon {

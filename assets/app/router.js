@@ -2,12 +2,16 @@ define([
   'backbone',
   'views/mapView',
   'views/actionsView',
-  'views/sendIssueView'
+  'views/sendIssueView',
+  'views/navControlsView'
 
-  ], function(Backbone, MapView, ActionsView, SendIssue) {
+  ], function(Backbone, MapView, ActionsView, SendIssue, NavControls) {
   return Backbone.Router.extend({
+    views: {},
+
     routes: {
-      '': 'showMain'
+      '': 'showMain',
+      'issue/report/:type': 'reportIssue'
     },
 
     defaultAction: function(actions){
@@ -15,10 +19,13 @@ define([
     },
 
     showMain:function(actions){
-      console.log('show main!!!');
-      new MapView();
-      new ActionsView();
-      new SendIssue();
+      this.views.map = new MapView();
+      this.views.actions = new ActionsView();
+    },
+
+    reportIssue: function (type) {
+      new NavControls();
+      this.views.actions.remove();
     }
   });
 });

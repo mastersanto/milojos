@@ -1,7 +1,8 @@
 define([
   'underscore',
   'backbone',
-  'collections/markersCollection'],
+  'collections/markersCollection'
+  ],
   function(
     _,
     Backbone,
@@ -34,16 +35,16 @@ define([
       var button = $(e.currentTarget),
           submenu = button.next('.submenu');
 
-      $('.mainAction').removeClass('active');
+      this.$('.mainAction').removeClass('active');
       button.addClass('active');
-      $('.submenu').hide();
-      submenu.show();
+      this.$('.submenu').addClass('hidden');
+      submenu.removeClass('hidden');
     },
 
     addIssueClick: function(e) {
       e.preventDefault();
       var type = $(e.currentTarget).attr('data-type');
-      Backbone.history.navigate('#issue/report/' + type);
+      Backbone.history.navigate('#issue/report/' + type , {trigger: true});
     }
   });
 });

@@ -3,7 +3,7 @@ define([
 	'backbone',
 	'text!templates/sendIssue.tpl'
 	], function(_, Backbone, sendIssueTpl) {
-	return Backbone.View.extend({
+	var model = Backbone.View.extend({
 		el: '#sendIssues',
 
 		initialize: function () {
@@ -15,4 +15,6 @@ define([
 			this.$el.html(template);
 		}
 	});
+
+	return new model();
 });

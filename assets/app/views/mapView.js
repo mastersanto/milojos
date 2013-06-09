@@ -1,11 +1,16 @@
 define([
   'underscore',
   'backbone',
-  'collections/markersCollection'],
+  'collections/markersCollection',
+  'models/issueModel'
+
+  ],
   function(
     _,
     Backbone,
-    MarkersCollection) {
+    MarkersCollection,
+    issueModel
+  ) {
 
   return Backbone.View.extend({
     userPosition: null,
@@ -33,6 +38,11 @@ define([
           zoom: 15,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
+
+      issueModel.set({
+        lat: this.userPosition.coords.latitude,
+        lng: this.userPosition.coords.longitude
+      });
 
       this.collection.forEach(function(issue) {
         new google.maps.Marker({
