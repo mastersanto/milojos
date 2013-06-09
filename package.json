@@ -1,6 +1,6 @@
 {
   "name": "mil-ojos",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "repository": {
@@ -9,7 +9,6 @@
   },
   "author": "johnjaiverac@gmail.com",
   "readmeFilename": "README.md",
-  "private": false,
   "dependencies": {
     "bower": "~0.9.2",
     "mongojs": "~0.7.5"
