@@ -39,7 +39,6 @@ ul{
 	border-width: 2px 1px;
 	border-color: #000;
 	border-style: solid;
-	background-color: #3ab504;
 	color: #fff;
 	display: block;
 	font-size: 2.5em;
@@ -48,9 +47,16 @@ ul{
 	text-align: center;
 	text-decoration: none;
 	vertical-align: top;
+	z-index: 5;
+	position: relative;
 }
-#actions li a:hover,
-#actions li a.active {
+
+#actions > li > a { 
+	background-color: #3ab504;
+}
+
+#actions > li > a:hover,
+#actions > li > a.active {
 	background-color: #49ec01;
 }
 #actions li a span.milIcon {
@@ -60,15 +66,16 @@ ul{
 	margin-right: .75em;
 }
 #actions li ul.submenu {
-	background-color: #272626;
+	background-color: rgba(39, 38, 38, 0.8);
 	position: absolute;
 	left: 0;
 	width: 100%;
 	bottom: 100%;
-	-webkit-transition: bottom 300ms ease-out;
-	-moz-transition: bottom 300ms ease-out;
-	transition: bottom 300ms ease-out;
+	-webkit-transition: bottom 250ms ease-in-out;
+	-moz-transition: bottom 250ms ease-in-out;
+	transition: bottom 250ms ease-in-out;
 	display: block!important;
+	z-index: 4;
 }
 
 #actions li ul.submenu.hidden {
@@ -80,7 +87,6 @@ ul{
 	width: 33%;
 }
 #actions ul.submenu li a {
-	background-color: #272626;
 	font-size: 2em;
 	line-height: normal;
 }
