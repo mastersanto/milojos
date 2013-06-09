@@ -65,9 +65,9 @@ ul{
 	left: 0;
 	width: 100%;
 	bottom: 100%;
-	-webkit-transition: bottom 300ms ease-out;
-	-moz-transition: bottom 300ms ease-out;
-	transition: bottom 300ms ease-out;
+	-webkit-transition: bottom 500ms ease-out;
+	-moz-transition: bottom 500ms ease-out;
+	transition: bottom 500ms ease-out;
 	display: block!important;
 }
 
