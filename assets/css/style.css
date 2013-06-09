@@ -3,5 +3,42 @@ html { height: 100% }
 body { height: 100%; margin: 0; padding: 0 }
 #map-canvas { height: 500px}
 
-#actions { text-align: center;}
-#actions a { display: inline-block; width: 40%; height: 1em; line-height: 1em;}
+#actions { text-align: center; background: #3AB504; border-top: 3px #2E5B01 solid; border-right: 2px #2E5B01 solid;margin-bottom: 0px}
+#actions div { display: inline-block; width: 45%; padding: 15px; cursor: pointer}
+#reportsBtn { border-right: 2px #2E5B01 solid}
+
+/*
+#btn1, #btn2, #btn3 {display: inline-block;}
+#btn4, #btn5, #btn6 {display: inline-block; margin-top: 50px}*/
+
+
+.boton {display: inline-block;}
+
+#menu {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*display: none;*/
+    -webkit-transition: left 1s linear;
+}
+ 
+input.rounded {
+	border: 1px solid #ccc;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	-moz-box-shadow: 2px 2px 3px #666;
+	-webkit-box-shadow: 2px 2px 3px #666;
+	box-shadow: 2px 2px 3px #666;
+	font-size: 20px;
+	padding: 4px 7px;
+	outline: 0;
+	-webkit-appearance: none;
+        position: absolute;
+        z-index: 999;
+        margin-top: 6px;
+        right: 3px;
+}
+input.rounded:focus {
+	border-color: #339933;
+}
