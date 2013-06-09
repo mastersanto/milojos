@@ -1,0 +1,17 @@
+{
+  "name": "mil-ojos",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mastersanto/milojos.git"
+  },
+  "author": "johnjaiverac@gmail.com",
+  "readmeFilename": "README.md",
+  "private": false,
+  "dependencies": {
+    "bower": "~0.9.2",
+    "mongojs": "~0.7.5"
+  }
+}
