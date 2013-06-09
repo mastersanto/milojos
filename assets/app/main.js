@@ -6,7 +6,7 @@ require(['backbone', 'router'], function (Backbone, Router) {
 
 	$('#reportsBtn').bind('click',
 	      function(e){
-	       $('#menu').toggle();
+	            $('#menu').toggle();
 
 	      }
 	);

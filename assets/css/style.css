@@ -1,7 +1,10 @@
 /* Gmaps */
 html { height: 100% }
 body { height: 100%; margin: 0; padding: 0 }
-#map-canvas { height: 500px}
+#map-container {
+	height: 100%;
+}
+#map-canvas { height: 100%}
 
 #actions { text-align: center; background: #3AB504; border-top: 3px #2E5B01 solid; border-right: 2px #2E5B01 solid;margin-bottom: 0px}
 #actions div { display: inline-block; width: 45%; padding: 15px; cursor: pointer}
