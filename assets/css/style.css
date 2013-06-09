@@ -190,3 +190,81 @@ input.rounded:focus {
             display: block;
             margin: .5em 0 0 0;
  }
+
+
+@media only screen and (max-width: 670px) {
+
+	#actions li a {
+		font-size: 1.5em;
+		line-height: 37px;
+		padding: .5em .5em 0;
+	}
+	#actions ul.submenu li a {
+		font-size: .75em;
+		line-height: normal;
+		padding: .5em .5em 0;
+	}
+
+	.milIcon {
+		background-image: url('images/milSpriteMobile.png');
+	}
+	#actions > li > a span.milIcon {
+		width: 36px;
+		height: 37px;
+	}
+	.reportsIcon {
+		background-position: -241px 0;
+	}
+	#reportsBtn:hover .reportsIcon,
+	#reportsBtn.active .reportsIcon {
+		background-position: -241px -37px;		
+	}
+	.reportIcon {
+		background-position: -278px 0;
+	}
+	#reportBtn:hover .reportIcon,
+	#reportBtn.active .reportIcon {
+		background-position: -278px -37px;
+	}
+
+	#actions ul.submenu li a span.milIcon {
+		width: 40px;
+		height: 40px;
+	}
+	.rapIcon {
+		background-position: 0 0;
+	}
+	.robIcon {
+		background-position: -40px 0;
+	}
+	.houseIcon {
+		background-position: -80px 0;
+	}
+	.carIcon {
+		background-position: -120px 0;
+	}
+	.tipIcon {
+		background-position: -160px 0;
+	}
+	.allIcon {
+		background-position: -200px 0;
+	}
+	a.rapBtn:hover .rapIcon {
+		background-position: 0 -40px;
+	}
+	a.robBtn:hover .robIcon {
+		background-position: -40px -40px;
+	}
+	a.houseBtn:hover .houseIcon {
+		background-position: -80px -40px;
+	}
+	a.carBtn:hover .carIcon {
+		background-position: -120px -40px;
+	}
+	a.tripBtn:hover .tipIcon {
+		background-position: -160px -40px;
+	}
+	a.allBtn:hover .allIcon {
+		background-position: -200px -40px;
+	}
+}
