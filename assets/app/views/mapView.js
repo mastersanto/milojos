@@ -41,6 +41,23 @@ define(['underscore', 'backbone', 'collections/MarkersCollection'], function(_, 
             title: 'test'
           });
         });
+    },
+
+    viewReports: function (e) {
+      var button = $(e.currentTarget),
+          submenu = button.next('.submenu');
+      $('.mainAction').removeClass('active');
+      button.addClass('active');
+      submenu.show();
+    },
+
+    addReport: function (e) {
+      var button = $(e.currentTarget),
+          submenu = button.next('.submenu');
+      $('.mainAction').removeClass('active');
+      button.addClass('active');
+      submenu.show();
     }
+
   });
 });

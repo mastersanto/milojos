@@ -2,10 +2,10 @@
 html { height: 100% }
 body { height: 100%; margin: 0; padding: 0 }
 #map-canvas { height: 500px}
-
+/*
 #actions { text-align: center; background: #3AB504; border-top: 3px #2E5B01 solid; border-right: 2px #2E5B01 solid;margin-bottom: 0px}
 #actions div { display: inline-block; width: 45%; padding: 15px; cursor: pointer}
-#reportsBtn { border-right: 2px #2E5B01 solid}
+#reportsBtn { border-right: 2px #2E5B01 solid}*/
 
 /*
 #btn1, #btn2, #btn3 {display: inline-block;}
@@ -14,6 +14,73 @@ body { height: 100%; margin: 0; padding: 0 }
 
 .boton {display: inline-block;}
 
+#actions {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+#actions li {/*
+	display: inline-block;*/
+	float: left;
+	width: 50%;
+}
+#actions li a {
+	border-width: 2px 1px;
+	border-color: #000;
+	border-style: solid;
+	background-color: #3ab504;
+	color: #fff;
+	display: block;
+	font-size: 2.5em;
+	line-height: 74px;
+	padding: 1em;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+}
+#actions li a:hover,
+#actions li a.active {
+	background-color: #49ec01;
+}
+#actions li a span.milIcon {
+	display: inline-block;
+	width: 74px;
+	height: 73px;
+	margin-right: .75em;
+}
+#actions li ul.submenu {
+	background-color: #272626;
+	display: none;
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	width: 100%;
+}
+#actions ul.submenu li {
+	display: inline-block;
+	width: 33%;
+}
+#actions ul.submenu li a {
+	background-color: #272626;
+	font-size: 2em;
+	line-height: normal;
+}
+#actions ul.submenu li a:hover {
+	background-color: #ffcf00;
+}
+#actions ul.submenu li a span.milIcon {
+	display: block;
+	margin-right: 0;
+}
+.milIcon {
+	background-image: url('images/milSprite.png');
+	background-repeat: no-repeat;
+	background-color: #f00;
+}
+.milIcon:hover {
+}
+/*
 #menu {
     position: relative;
     left: 0px;
@@ -21,7 +88,7 @@ body { height: 100%; margin: 0; padding: 0 }
     width: 100%;
     background: #2D2D2D;
     -webkit-transition: left 1s linear;
-}
+}*/
  
 input.rounded {
 	border: 1px solid #ccc;

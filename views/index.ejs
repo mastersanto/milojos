@@ -13,26 +13,69 @@
 		<header class="header">			
 		</header>
 		<div id="map-container" class="content">
-                        <div><input type="input" class="rounded" id="buscar" name="buscar"></div>
+
+      <input type="input" class="rounded" id="buscar" name="buscar">
 			<div id="map-canvas"></div>
-                        
-			<div id="actions">
-				<div class="span6" id="reportsBtn" title="Reportes"><img src="assets/css/images/reports.png" /></div>
-				<div class="span6" id="reportBtn" title="Reportar"><img src="assets/css/images/report.png" /></div>
-			</div>
 
-
-                        <div id="menu">
-                            <div id="btn1" class="boton"><img src="assets/css/images/opcion_menu.png"/></div>
-                            <div id="btn2" class="boton"><img src="assets/css/images/opcion_menu.png"/></div>
-                            <div id="btn3" class="boton"><img src="assets/css/images/opcion_menu.png"/></div>
-                            <div id="btn4" class="boton"><img src="assets/css/images/opcion_menu.png"/></div>
-                            <div id="btn5" class="boton"><img src="assets/css/images/opcion_menu.png"/></div>
-                            <div id="btn6" class="boton"><img src="assets/css/images/opcion_menu.png"/></div>
-                        </div>
+			<ul id="actions">
+				<li>
+					<a href="#" id="reportsBtn" class="mainAction" title="Reportes"><span class="milIcon reportsIcon"></span>Reportes</a>
+	        <ul class="submenu">
+	        	<li>
+							<a href="#" title="Raponeos">
+								<span class="milIcon rapIcon"></span>Raponeos</a>
+						</li>
+	        	<li>
+							<a href="#" title="Atracos">
+								<span class="milIcon robIcon"></span>Atracos</a>
+						</li>
+	        	<li>
+							<a href="#" title="Robos en Residencia">
+								<span class="milIcon hauseIcon"></span>Robos en Residencia</a>
+						</li>
+	        	<li>
+							<a href="#" title="Robo de Vehículo">
+								<span class="milIcon carIcon"></span>Robos de Vehículos</a>
+						</li>
+	        	<li>
+							<a href="#" title="Paseo Millonario">
+								<span class="milIcon tipIcon"></span>Paseos Millonarios</a>
+						</li>
+	        </ul>
+				</li>
+				<li>
+					<a href="#" id="reportsBtn" class="mainAction" title="Reportar"><span class="milIcon reportIcon"></span>Reportar</a>
+	        <ul class="submenu">
+	        	<li>
+							<a href="#" title="Raponeo">
+								<span class="milIcon rapIcon"></span>Raponeo</a>
+						</li>
+	        	<li>
+							<a href="#" title="Atraco">
+								<span class="milIcon robIcon"></span>Atraco</a>
+						</li>
+	        	<li>
+							<a href="#" title="Robo en Residencia">
+								<span class="milIcon hauseIcon"></span>Robo en Residencia</a>
+						</li>
+	        	<li>
+							<a href="#" title="Robo de Vehículo">
+								<span class="milIcon carIcon"></span>Robo de Vehículo</a>
+						</li>
+	        	<li>
+							<a href="#" title="Paseo Millonario">
+								<span class="milIcon tipIcon"></span>Paseo Millonario</a>
+						</li>
+	        	<li>
+							<a href="#" title="Todos">
+								<span class="milIcon allIcon"></span>Todos</a>
+						</li>
+	        </ul>
+				</li>
+			</ul>
 
 		</div>
-		</div>		
+
 		<script src="components/zepto/zepto.js"></script>
 		<script src="components/requirejs/require.js" data-main="assets/app/main"></script>
 		<script>
@@ -50,11 +93,6 @@
 		    } 
 		  });
 		</script>
-		<!-- // <script src="assets/app/models/markerModel.js"></script>
-		// <script src="assets/app/collections/markersCollection.js"></script>
-		// <script src="assets/app/views/mapView.js"></script>
-		// <script src="assets/app/router.js"></script>
-		<script src="assets/app/main.js"></script> -->
 
 		<script type="text/javascript"
 		      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUtCS5wnCkpcekVE3NA3tWCWo9Y1KPWIY&sensor=false">
