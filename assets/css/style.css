@@ -24,8 +24,12 @@ ul{
 .boton {display: inline-block;}
 
 #actions {
-	position: relative;
+	position: absolute;
+	bottom : 0;
+	left: 0;
+	width: 100%;
 }
+
 #actions li {/*
 	display: inline-block;*/
 	float: left;
@@ -57,12 +61,20 @@ ul{
 }
 #actions li ul.submenu {
 	background-color: #272626;
-	display: none;
 	position: absolute;
-	bottom: 100%;
 	left: 0;
 	width: 100%;
+	bottom: 100%;
+	-webkit-transition: bottom 300ms ease-out;
+	-moz-transition: bottom 300ms ease-out;
+	transition: bottom 300ms ease-out;
+	display: block!important;
 }
+
+#actions li ul.submenu.hidden {
+	bottom: 0;
+}
+
 #actions ul.submenu li {
 	display: inline-block;
 	width: 33%;
