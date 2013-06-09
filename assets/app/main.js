@@ -3,11 +3,11 @@ require(['backbone', 'router'], function (Backbone, Router) {
 
 	var router = new Router();
 	Backbone.history.start();
-});
 
-$('#reportsBtn').bind('click', 
-      function(e){ 
-            $('#menu').toggle();
-            
-      } 
-);
+	$('#reportsBtn').bind('click',
+	      function(e){
+	       $('#menu').toggle();
+
+	      }
+	);
+});
