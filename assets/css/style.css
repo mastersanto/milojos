@@ -84,29 +84,69 @@ ul{
 	font-size: 2em;
 	line-height: normal;
 }
-#actions ul.submenu li a:hover {
-	background-color: #ffcf00;
-}
 #actions ul.submenu li a span.milIcon {
 	display: block;
-	margin-right: 0;
+	margin: 0 auto .25em;
 }
 .milIcon {
 	background-image: url('images/milSprite.png');
 	background-repeat: no-repeat;
 	background-color: #f00;
 }
-.milIcon:hover {
+.rapIcon {
+	background-position: 0 0;
 }
-/*
-#menu {
-    position: relative;
-    left: 0px;
-    top: -210px;
-    width: 100%;
-    background: #2D2D2D;
-    -webkit-transition: left 1s linear;
-}*/
+.robIcon {
+	background-position: -74px 0;
+}
+.houseIcon {
+	background-position: -148px 0;
+}
+.carIcon {
+	background-position: -222px 0;
+}
+.tipIcon {
+	background-position: -296px 0;
+}
+.allIcon {
+	background-position: -370px 0;
+}
+#actions ul.submenu li a.rapBtn:hover {
+	background-color: #9ac400;
+}
+a.rapBtn:hover .rapIcon {
+	background-position: 0 -73px;
+}
+#actions ul.submenu li a.robBtn:hover {
+	background-color: #26ad1f;
+}
+a.robBtn:hover .robIcon {
+	background-position: -74px -73px;
+}
+#actions ul.submenu li a.houseBtn:hover {
+	background-color: #ffcf00;
+}
+a.houseBtn:hover .houseIcon {
+	background-position: -148px -73px;
+}
+#actions ul.submenu li a.carBtn:hover {
+	background-color: #fd6400;
+}
+a.carBtn:hover .carIcon {
+	background-position: -222px -73px;
+}
+#actions ul.submenu li a.tripBtn:hover {
+	background-color: #c72200;
+}
+a.tripBtn:hover .tipIcon {
+	background-position: -296px -73px;
+}
+#actions ul.submenu li a.allBtn:hover {
+	background-color: #fd795b;
+}
+a.allBtn:hover .allIcon {
+	background-position: -370px -73px;
+}
  
 input.rounded {
 	border: 1px solid #ccc;
