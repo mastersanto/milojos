@@ -17,8 +17,9 @@ body { height: 100%; margin: 0; padding: 0 }
 #menu {
     position: relative;
     left: 0px;
-    top: 0px;
-    /*display: none;*/
+    top: -210px;
+    width: 100%;
+    background: #2D2D2D;
     -webkit-transition: left 1s linear;
 }
  

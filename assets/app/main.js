@@ -6,8 +6,8 @@ require(['backbone', 'router'], function (Backbone, Router) {
 });
 
 $('#reportsBtn').bind('click', 
-      function(e){
-          alert('mostrar');
-
+      function(e){ 
+            $('#menu').toggle();
+            
       } 
 );
