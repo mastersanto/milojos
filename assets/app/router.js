@@ -1,4 +1,4 @@
-define(['backbone', 'views/mapView'], function(Backbone, MapView) {
+define(['backbone', 'views/mapView', 'views/actionsView'], function(Backbone, MapView, ActionsView) {
   return Backbone.Router.extend({
     routes: {
       '': 'showMain'
@@ -11,6 +11,7 @@ define(['backbone', 'views/mapView'], function(Backbone, MapView) {
     showMain:function(actions){
       console.log('show main!!!');
       new MapView();
+      new ActionsView();
     }
   });
 });
