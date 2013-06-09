@@ -10,8 +10,9 @@ define([
   return Backbone.View.extend({
 
     events: {
-        'click #reportsBtn':'viewReports',
-        'click #reportBtn':'addReport'
+      'click #reportsBtn':'viewReports',
+      'click #reportBtn':'addReport',
+      'click .report-btn' : 'addIssueClick'
     },
 
     el: '#actions',
@@ -37,7 +38,12 @@ define([
       button.addClass('active');
       $('.submenu').hide();
       submenu.show();
-    }
+    },
 
+    addIssueClick: function(e) {
+      e.preventDefault();
+      var type = $(e.currentTarget).attr('data-type');
+      Backbone.history.navigate('#issue/report/' + type);
+    }
   });
 });
