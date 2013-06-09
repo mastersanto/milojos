@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'collections/MarkersCollection'], function(_, Backbone, MarkersCollection) {
+define(['underscore', 'backbone', 'collections/markersCollection'], function(_, Backbone, MarkersCollection) {
 
   return Backbone.View.extend({
     userPosition: null,
