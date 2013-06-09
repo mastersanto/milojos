@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta charset="UTF-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	    <title>Mil Ojos</title>
+            <link rel="stylesheet" href="assets/css/bootstrap.css" media="all">
+            <link rel="stylesheet" href="assets/css/bootstrap-responsive.css" media="all">
+	    <link rel="stylesheet" href="assets/css/style.css" media="all" />
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUtCS5wnCkpcekVE3NA3tWCWo9Y1KPWIY&sensor=false"></script>
+            <script type="text/javascript">
+    //<![CDATA[
+
+	// Inicialización de variables.
+   function iniciar() {
+//    var coordenadas = new google.maps.LatLng(37.669419, -1.696186);
+    var coordenadas = navigator.geolocation.getCurrentPosition(showLocation);
+    //(2) Inicializamos el mapa en la variable 'coordenadas'
+ 
+    var myOptions = { //Opciones:
+      zoom: 13, 
+      //(3)Cantidad de Zoom
+      center: coordenadas,
+      //(4) establecemos el centro
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+      //(5) seleccionamos el tipo de mapa
+    };
+    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+   //(6) creamos el nuevo mapa
+  }
+
+  function showLocation(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    alert("Latitude : " + latitude + " Longitude: " + longitude);
+  }
+
+  function errorHandler(err) {
+  if(err.code == 1) {
+    alert("Error: Access is denied!");
+  }else if( err.code == 2) {
+    alert("Error: Position is unavailable!");
+  }
+  }  
+
+    //---------------------------------//
+    //           GEOCODER
+	//---------------------------------//
+    function showAddress(address, zoom) {
+    	if (geocoder) {
+        	geocoder.getLatLng(address,
+          		function(point) {
+            		if (!point) {
+            			alert(address + " not found");
+            		} else {
+            			map.setCenter(point, zoom);
+            			var marker = new GMarker(point);
+            			map.addOverlay(marker);
+            			marker.openInfoWindowHtml("<b>"+address+"</b><br>Coordenadas:<br>Latitud : "+point.y+"<br>Longitud : "+point.x+"<a href=http://www.mundivideo.com/fotos_pano.htm?lat="+point.y+"&lon="+point.x+"&mapa=3 TARGET=fijo><br><br>Fotografias</a>");
+       			     //marker.openInfoWindowHtml("<b>Latitud:</b> "+point.y+"<br /><b>Longitud:</b> "+point.x);
+       			      document.form_mapa.coordenadas.value = point.y;
+					  document.form_mapa.longitud.value = point.x; //Longitud
+               		}
+               	}
+        	);
+      	}}
+    //---------------------------------//
+    //     FIN DE GEOCODER
+	//---------------------------------//
+
+    //]]>
+	
+	function ocultar_mostrar_poligono(){
+   if (polygon.isHidden()){
+      //alert("Estaba oculto");
+      polygon.show();
+   }else{
+      //alert("Estaba mostrandose");
+      polygon.hide();
+   }
+} 
+     </script>
+	</head>
+        <body onload="iniciar();">
+    <div>
+            <label for="comentario">Como Ocurrio?</label>
+            <textarea id="comentario" name="comentario" cols="25" rows="3"></textarea>
+            <label for="comentario">Cuando Ocurrio?</label>
+            <input type="datetime" id="fecha" name="fecha">
+            <input type="text" id="longitud" value="">
+            <input type="text" id="latitud" value="">
+            <div id="map" style="width: 700px; height: 500px"></div>
+            <input type="submit" class="btn" value="Enviar">
+    </div>
+            
+
+	</body>
+</html>
