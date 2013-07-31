@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 
     concat: {
       "dist/main.js": [
-        "app/**/*.js"
+        "assets/app/**/*.js"
       ]
     },
 
