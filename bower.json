@@ -2,10 +2,7 @@
   "name": "mil-ojos",
   "version": "0.1.0",
   "dependencies": {
-    "backbone-amd": "~1.0.0",
-    "underscore-amd": "~1.4.4",
-    "requirejs": "latest",
-    "requirejs-text": "latest",
+    "backbone": "~1.0.0",
     "zepto": "latest"
   },
   "ignore": [
