@@ -1,0 +1,282 @@
+/* Gmaps */
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+#map-container {
+	height: 100%;
+}
+#map-canvas { height: 100%}
+
+ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+/*
+#actions { text-align: center; background: #3AB504; border-top: 3px #2E5B01 solid; border-right: 2px #2E5B01 solid;margin-bottom: 0px}
+#actions div { display: inline-block; width: 45%; padding: 15px; cursor: pointer}
+#reportsBtn { border-right: 2px #2E5B01 solid}*/
+
+/*
+#btn1, #btn2, #btn3 {display: inline-block;}
+#btn4, #btn5, #btn6 {display: inline-block; margin-top: 50px}*/
+
+
+.boton {display: inline-block;}
+
+#actions,
+#navControls {
+	position: absolute;
+	bottom : 0;
+	left: 0;
+	width: 100%;
+}
+
+#actions li,
+#navControls li {/*
+	display: inline-block;*/
+	float: left;
+	width: 50%;
+}
+#actions li a,
+#navControls li a {
+	border-width: 2px 1px;
+	border-color: #000;
+	border-style: solid;
+	color: #fff;
+	display: block;
+	font-size: 2.5em;
+	line-height: 74px;
+	padding: 1em;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	z-index: 5;
+	position: relative;
+}
+#actions > li > a,
+#navControls li a { 
+	background-color: #3ab504;
+}
+#actions > li > a:hover,
+#actions > li > a.active,
+#navControls > li > a:hover,
+#navControls > li > a.active {
+	background-color: #49ec01;
+}
+#actions > li > a span.milIcon {
+	display: inline-block;
+	width: 67px;
+	height: 68px;
+	margin-right: .75em;
+}
+#actions li ul.submenu {
+	background-color: rgba(39, 38, 38, 0.8);
+	position: absolute;
+	left: 0;
+	width: 100%;
+	bottom: 100%;
+	-webkit-transition: bottom 250ms ease-in-out;
+	-moz-transition: bottom 250ms ease-in-out;
+	transition: bottom 250ms ease-in-out;
+	display: block!important;
+	z-index: 4;
+}
+#actions li ul.submenu.hidden {
+	bottom: 0;
+}
+#actions ul.submenu li {
+	display: inline-block;
+	width: 33%;
+}
+#actions ul.submenu li a {
+	font-size: 2em;
+	line-height: normal;
+}
+#actions ul.submenu li a span.milIcon {
+	display: block;
+	width: 74px;
+	height: 73px;
+	margin: 0 auto .25em;
+}
+.milIcon {
+	background-image: url('images/milSprite.png');
+	background-repeat: no-repeat;
+}
+.reportsIcon {
+	background-position: -444px 0;
+}
+#reportsBtn:hover .reportsIcon,
+#reportsBtn.active .reportsIcon {
+	background-position: -444px -68px;
+}
+.reportIcon {
+	background-position: -511px 0;
+}
+#reportBtn:hover .reportIcon,
+#reportBtn.active .reportIcon {
+	background-position: -511px -68px;
+}
+.rapIcon {
+	background-position: 0 0;
+}
+.robIcon {
+	background-position: -74px 0;
+}
+.houseIcon {
+	background-position: -148px 0;
+}
+.carIcon {
+	background-position: -222px 0;
+}
+.tipIcon {
+	background-position: -296px 0;
+}
+.allIcon {
+	background-position: -370px 0;
+}
+#actions ul.submenu li a.rapBtn:hover {
+	background-color: #9ac400;
+}
+a.rapBtn:hover .rapIcon {
+	background-position: 0 -73px;
+}
+#actions ul.submenu li a.robBtn:hover {
+	background-color: #26ad1f;
+}
+a.robBtn:hover .robIcon {
+	background-position: -74px -73px;
+}
+#actions ul.submenu li a.houseBtn:hover {
+	background-color: #ffcf00;
+}
+a.houseBtn:hover .houseIcon {
+	background-position: -148px -73px;
+}
+#actions ul.submenu li a.carBtn:hover {
+	background-color: #fd6400;
+}
+a.carBtn:hover .carIcon {
+	background-position: -222px -73px;
+}
+#actions ul.submenu li a.tripBtn:hover {
+	background-color: #c72200;
+}
+a.tripBtn:hover .tipIcon {
+	background-position: -296px -73px;
+}
+#actions ul.submenu li a.allBtn:hover {
+	background-color: #fd795b;
+}
+a.allBtn:hover .allIcon {
+	background-position: -370px -73px;
+}
+ 
+input.rounded {
+	border: 1px solid #ccc;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	-moz-box-shadow: 2px 2px 3px #666;
+	-webkit-box-shadow: 2px 2px 3px #666;
+	box-shadow: 2px 2px 3px #666;
+	font-size: 20px;
+	padding: 4px 7px;
+	outline: 0;
+	-webkit-appearance: none;
+    position: absolute;
+    z-index: 999;
+    margin-top: 6px;
+    right: 3px;
+}
+input.rounded:focus {
+	border-color: #339933;
+}
+
+@media only screen and (max-width: 670px) {
+
+	#actions li a {
+		font-size: 1.5em;
+		line-height: 37px;
+		padding: .5em .5em 0;
+	}
+	#actions ul.submenu li a {
+		font-size: .75em;
+		line-height: normal;
+		padding: .5em .5em 0;
+	}
+
+	.milIcon {
+		background-image: url('images/milSpriteMobile.png');
+	}
+	#actions > li > a span.milIcon {
+		width: 36px;
+		height: 37px;
+	}
+	.reportsIcon {
+		background-position: -241px 0;
+	}
+	#reportsBtn:hover .reportsIcon,
+	#reportsBtn.active .reportsIcon {
+		background-position: -241px -37px;		
+	}
+	.reportIcon {
+		background-position: -278px 0;
+	}
+	#reportBtn:hover .reportIcon,
+	#reportBtn.active .reportIcon {
+		background-position: -278px -37px;
+	}
+
+	#actions ul.submenu li a span.milIcon {
+		width: 40px;
+		height: 40px;
+	}
+	.rapIcon {
+		background-position: 0 0;
+	}
+	.robIcon {
+		background-position: -40px 0;
+	}
+	.houseIcon {
+		background-position: -80px 0;
+	}
+	.carIcon {
+		background-position: -120px 0;
+	}
+	.tipIcon {
+		background-position: -160px 0;
+	}
+	.allIcon {
+		background-position: -200px 0;
+	}
+	a.rapBtn:hover .rapIcon {
+		background-position: 0 -40px;
+	}
+	a.robBtn:hover .robIcon {
+		background-position: -40px -40px;
+	}
+	a.houseBtn:hover .houseIcon {
+		background-position: -80px -40px;
+	}
+	a.carBtn:hover .carIcon {
+		background-position: -120px -40px;
+	}
+	a.tripBtn:hover .tipIcon {
+		background-position: -160px -40px;
+	}
+	a.allBtn:hover .allIcon {
+		background-position: -200px -40px;
+	}
+}
+
+label {
+    display: block;
+    margin: .5em 0 0 0;
+}
+
+#sendIssues {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
