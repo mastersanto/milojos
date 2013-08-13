@@ -5,3 +5,5 @@ dist/
 build/
 assets/prod/
 .sass-cache/
+
+assets/css/main.css
