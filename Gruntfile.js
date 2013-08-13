@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
-    clean: [ "assets/prod" ],
+    clean: [ "assets/debug/", "assets/prod/" ],
 
     watch: {
        files: '<config:jshint.all>',
@@ -23,23 +23,37 @@ module.exports = function(grunt) {
       compile: {
         options: {},
         files: {
-          "dist/debug/templates.js": [
-            "app/templates/**/*.html"
+          "assets/debug/templates.js": [
+            "assets/app/views/**/templates/*.html"
           ]
         }
       }
     },
 
+    requirejs: {
+      compile: {
+        options: {
+          mainConfigFile: "assets/app/config.js",
+          out: "assets/debug/require.build.js",
+          name: "config",
+          wrap: false,
+          optimize: "none"
+        }
+      }
+    },
+
     concat: {
-      "assets/prod/main.js": [
-        "assets/app/**/*.js"
+      "assets/debug/main.js": [
+        "components/almond/almond.js",
+        "assets/debug/templates.js",
+        "assets/debug/require.build.js"
       ]
     },
 
     uglify: {
       my_target: {
         files: {
-          'assets/prod/main.prod.js': ['assets/prod/main.js']
+          'assets/prod/main.js': ['assets/debug/main.js']
         }
       }
     }
@@ -53,9 +67,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-remove-logging');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   grunt.registerTask('default', [
-    'clean', 'jshint', 'jst', 'concat'
+    'clean', 'jshint', 'jst', 'requirejs', 'concat'
   ]);
 
   grunt.registerTask('release', [
