@@ -7,6 +7,52 @@
     <link rel="stylesheet" href="css/main.css" media="all">
   </head>
   <body>
+    <div id="wrapper">
+      <header>
+        <button id="filters-btn">Filters</button>
+        <input type="search" name="search" id="search-input" placeholder="search">
+        <button id="settings-btn">Settings</button>
+      </header>
+      <section id="map-wrapper"></section>
+      <nav>
+        <ul class="report-menu">
+          <li><a href="raponazo" class="btn green">Reportar</a>
+            <ul class="categories-menu">
+              <li><a href="raponazo"><span class="icon-raponazo"></span>Raponazo</a></li>
+              <li><a href="atraco"><span class="icon-atraco"></span>Atraco</a></li>
+              <li><a href="residencia"><span class="icon-residencia"></span>Robo residencia</a></li>
+              <li><a href="vehiculo"><span class="icon-vehiculo"></span>Robo de vehiculo</a></li>
+              <li><a href="paseo"><span class="icon-paseo"></span>Paseo millonario</a></li>
+              <li><a href="otros"><span class="icon-otros"></span>Otros</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <aside id="filters-wrapper" class="collapsible">
+        <h3>Filter by</h3>
+        <ul id="filters-list" class="menu">
+          <li><a href="#">Raponazos</a></li>
+          <li><a href="#">Atracos</a></li>
+          <li><a href="#">Robos residenciales</a></li>
+          <li><a href="#">Robos de vehiculo</a></li>
+          <li><a href="#">Paseo millonario</a></li>
+          <li><a href="#">Otros</a></li>
+        </ul>
+      </aside>
+      <section id="settings-wrapper" class="collapsible">
+        <h3>Settings</h3>
+        <ul id="settings-list" class="menu">
+          <li><a href="#">Mi perfil</a></li>
+          <li><a href="#">Mis reportes</a></li>
+          <li><a href="#">Mis Angeles Guardianes</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Log out</a></li>
+        </ul>
+      </aside>
+    </div>
+
+
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUtCS5wnCkpcekVE3NA3tWCWo9Y1KPWIY&amp;sensor=false">
     </script>

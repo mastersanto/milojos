@@ -1,4 +1,8 @@
-/* normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
+.icons-mobile-sprite, nav .report-menu ul.categories-menu li a span.icon-raponazo, nav .report-menu ul.categories-menu li a span.icon-raponazo:hover, nav .report-menu ul.categories-menu li a span.icon-atraco, nav .report-menu ul.categories-menu li a span.icon-atraco:hover, nav .report-menu ul.categories-menu li a span.icon-residencia, nav .report-menu ul.categories-menu li a span.icon-residencia:hover, nav .report-menu ul.categories-menu li a span.icon-vehiculo, nav .report-menu ul.categories-menu li a span.icon-vehiculo:hover, nav .report-menu ul.categories-menu li a span.icon-paseo, nav .report-menu ul.categories-menu li a span.icon-paseo:hover, nav .report-menu ul.categories-menu li a span.icon-otros, nav .report-menu ul.categories-menu li a span.icon-otros:hover {
+  background: url('../img/icons-mobile-s4f92b5bc87.png') no-repeat;
+}
+
+/*! normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
 /* =============================================================================
  * HTML5 display definitions
  * ========================================================================== */
@@ -403,4 +407,135 @@ table {
 
 .hidden {
   display: none;
+}
+
+h3 {
+  color: white;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  border: 0 none;
+}
+input[type="search"] {
+  padding: 2px 6px;
+}
+
+#wrapper {
+  position: relative;
+}
+
+.collapsible {
+  padding: 20px;
+  position: relative;
+  z-index: 100;
+  background-color: #333333;
+}
+
+.menu {
+  padding: 0;
+  list-style: none;
+}
+
+.green {
+  background-color: #49ec01;
+  color: white;
+}
+
+header {
+  padding: 20px;
+  background-color: #333333;
+  text-align: center;
+  z-index: 100;
+  position: relative;
+}
+
+nav {
+  position: absolute;
+  z-index: 200;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+nav .report-menu > li {
+  position: relative;
+}
+nav .report-menu > li > a {
+  display: block;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+}
+nav .report-menu ul.categories-menu {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+}
+nav .report-menu ul.categories-menu li {
+  display: inline-block;
+  width: 33%;
+}
+nav .report-menu ul.categories-menu li a {
+  display: block;
+  text-align: center;
+}
+nav .report-menu ul.categories-menu li a span {
+  display: block;
+  width: 40px;
+  height: 39px;
+  margin: 0 auto;
+}
+nav .report-menu ul.categories-menu li a span.icon-raponazo {
+  background-position: 0 -120px;
+}
+nav .report-menu ul.categories-menu li a span.icon-raponazo:hover {
+  background-position: 0 0;
+}
+nav .report-menu ul.categories-menu li a span.icon-atraco {
+  background-position: 0 -237px;
+}
+nav .report-menu ul.categories-menu li a span.icon-atraco:hover {
+  background-position: 0 -354px;
+}
+nav .report-menu ul.categories-menu li a span.icon-residencia {
+  background-position: 0 -315px;
+}
+nav .report-menu ul.categories-menu li a span.icon-residencia:hover {
+  background-position: 0 -432px;
+}
+nav .report-menu ul.categories-menu li a span.icon-vehiculo {
+  background-position: 0 -198px;
+}
+nav .report-menu ul.categories-menu li a span.icon-vehiculo:hover {
+  background-position: 0 -393px;
+}
+nav .report-menu ul.categories-menu li a span.icon-paseo {
+  background-position: 0 -159px;
+}
+nav .report-menu ul.categories-menu li a span.icon-paseo:hover {
+  background-position: 0 -276px;
+}
+nav .report-menu ul.categories-menu li a span.icon-otros {
+  background-position: 0 -471px;
+}
+nav .report-menu ul.categories-menu li a span.icon-otros:hover {
+  background-position: 0 -510px;
+}
+
+#search-input {
+  border-radius: 10px;
+}
+
+#map-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #dddddd;
 }

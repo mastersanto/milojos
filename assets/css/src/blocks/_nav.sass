@@ -1,0 +1,54 @@
+nav
+	position: absolute
+	z-index: 200
+	right: 0
+	bottom: 0
+	left: 0
+	.report-menu
+		> li
+			position: relative
+			> a
+				display: block
+				text-align: center
+				height: emCalc(30px)
+				line-height: emCalc(30px)
+		ul.categories-menu
+			position: absolute
+			right: 0
+			bottom: 100%
+			left: 0
+			li
+				display: inline-block
+				width: 33%
+				a
+					display: block
+					text-align: center
+					span
+						display: block
+						width: 40px
+						height: 39px
+						margin: 0 auto
+						&.icon-raponazo
+							@include icons-mobile-sprite(report_raponazo)
+							&:hover
+								@include icons-mobile-sprite(report_raponazo_over)
+						&.icon-atraco
+							@include icons-mobile-sprite(report_atraco)
+							&:hover
+								@include icons-mobile-sprite(report_atraco_over)
+						&.icon-residencia
+							@include icons-mobile-sprite(report_residencia)
+							&:hover
+								@include icons-mobile-sprite(report_residencia_over)
+						&.icon-vehiculo
+							@include icons-mobile-sprite(report_vehiculo)
+							&:hover
+								@include icons-mobile-sprite(report_vehiculo_over)
+						&.icon-paseo
+							@include icons-mobile-sprite(report_paseo)
+							&:hover
+								@include icons-mobile-sprite(report_paseo_over)
+						&.icon-otros
+							@include icons-mobile-sprite(report_otros)
+							&:hover
+								@include icons-mobile-sprite(report_otros_over)

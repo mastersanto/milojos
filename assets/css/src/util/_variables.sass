@@ -1,0 +1,11 @@
+$gray: #333
+$gray-light: #ddd
+$green: #49ec01
+
+@mixin padding-block
+  padding: emCalc(20px)
+
+$em-base: 1em
+
+@function emCalc($pxWidth)
+  @return $pxWidth / $em-base * 1em
