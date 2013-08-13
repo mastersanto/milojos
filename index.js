@@ -6,7 +6,8 @@ require('./api')(server);
 
 server.configure(function() {
 	server.set('view engine', 'ejs');
-	server.use('/assets', express.static(__dirname + '/assets'));
+	server.use('/css', express.static(__dirname + '/assets/css'));
+	server.use('/app', express.static(__dirname + '/assets/app'));
 	server.use('/scripts', express.static(__dirname + '/components'));
 });
 

@@ -2,3 +2,5 @@ node_modules/
 components/
 dist/
 build/
+assets/prod/
+.sass-cache/

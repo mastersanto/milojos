@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
-    clean: [ "dist/" ],
+    clean: [ "assets/prod" ],
 
     watch: {
        files: '<config:jshint.all>',
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
     },
 
     concat: {
-      "dist/main.js": [
+      "assets/prod/main.js": [
         "assets/app/**/*.js"
       ]
     },
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          'dist/main.production.js': ['dist/main.js']
+          'assets/prod/main.prod.js': ['assets/prod/main.js']
         }
       }
     }
