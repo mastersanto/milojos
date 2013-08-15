@@ -8,14 +8,19 @@ input
   &[type="search"]
     padding: emCalc(2px) emCalc(6px)
 
+body, html
+  height: 100%
+
 #wrapper
   position: relative
+  height: 100%
 
 .collapsible
   @include padding-block
   position: relative
   z-index: 100
   background-color: $gray
+  width: 20%
 
 .menu
   padding: 0

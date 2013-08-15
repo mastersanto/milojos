@@ -410,7 +410,15 @@ this["JST"]["assets/app/views/categories/templates/item.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '';
+__p += '<a href="' +
+((__t = ( id )) == null ? '' : __t) +
+'" class="' +
+((__t = ( id )) == null ? '' : __t) +
+'-btn"><span class="icon-' +
+((__t = ( id )) == null ? '' : __t) +
+'"></span>' +
+((__t = ( name )) == null ? '' : __t) +
+'</a>\n';
 
 }
 return __p
@@ -420,7 +428,7 @@ this["JST"]["assets/app/views/categories/templates/list.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<ul><li></li></ul>\n';
+__p += '<ul class="report-menu">\n  <li><a href="#" class="btn green">Reportar</a>\n    <ul class="categories-menu"></ul>\n  </li>\n</ul>\n';
 
 }
 return __p
@@ -450,7 +458,7 @@ this["JST"]["assets/app/views/map/templates/map.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div></div>\n';
+__p += '\n';
 
 }
 return __p
@@ -7537,6 +7545,46 @@ define('app', [
   return app;
 });
 
+define('collections/categories',[
+  'backbone'
+
+], function(
+  Backbone
+
+) {
+  return new Backbone.Collection([
+    {
+      id: 'raponazo',
+      name: 'Raponazo'
+    },
+
+    {
+      id: 'atraco',
+      name: 'Atraco'
+    },
+
+    {
+      id: 'residencia',
+      name: 'Robo residencia'
+    },
+
+    {
+      id: 'vehiculo',
+      name: 'Robo de vehiculo'
+    },
+
+    {
+      id: 'paseo',
+      name: 'Paseo millonario'
+    },
+
+    {
+      id: 'otros',
+      name: 'Otros'
+    }
+  ]);
+});
+
 define('utils/tpl',[],function(){
   var templatesURL = 'assets/app/views/';
 
@@ -7546,7 +7594,84 @@ define('utils/tpl',[],function(){
   };
 });
 
+define('collections/issues',[
+  'backbone',
+
+  'app'
+
+], function(
+  Backbone,
+  app
+
+) {
+  return Backbone.Collection.extend({
+    url: app.api('issues')
+  });
+});
+
 define('views/map/map',[
+  'marionette',
+  'underscore',
+
+  'utils/tpl',
+
+  'collections/issues'
+
+], function(
+  Marionette,
+  _,
+
+  tpl,
+
+  issues
+
+  ) {
+
+  return Marionette.ItemView.extend({
+    template: tpl('map/templates/map.html'),
+
+    initialize: function() {
+      this.collection = new issues();
+    },
+
+    onRender: function() {
+      navigator.geolocation.getCurrentPosition( _.bind(this.mapInit, this) );
+    },
+
+    mapInit:function(currentPosition){
+      var coords;
+
+      this.userPosition = currentPosition;
+      coords = new google.maps.LatLng(
+        this.userPosition.coords.latitude,
+        this.userPosition.coords.longitude
+      );
+
+      this.map = new google.maps.Map(this.$el[0], {
+        center: coords,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+
+      this.collection.fetch().then(_.bind(this.addMarkers, this));
+    },
+
+    addMarkers: function () {
+      var map = this.map;
+
+      this.collection.forEach(function(issue) {
+        new google.maps.Marker({
+          position: new google.maps.LatLng(issue.get('lat'), issue.get('lng')),
+          map: map,
+          title: issue.get('title')
+        });
+      });
+    }
+  });
+
+});
+
+define('views/categories/item',[
   'marionette',
 
   'utils/tpl'
@@ -7554,7 +7679,8 @@ define('views/map/map',[
 ], function(Marionette, tpl) {
 
   return Marionette.ItemView.extend({
-    template: tpl('map/templates/map.html')
+    template: tpl('categories/templates/item.html'),
+    tagName: 'li'
   });
 
 });
@@ -7562,12 +7688,17 @@ define('views/map/map',[
 define('views/categories/list',[
   'marionette',
 
-  'utils/tpl'
+  'utils/tpl',
 
-], function(Marionette, tpl) {
+  'views/categories/item'
+
+], function(Marionette, tpl, Category) {
 
   return Marionette.CompositeView.extend({
-    template: tpl('categories/templates/list.html')
+    template: tpl('categories/templates/list.html'),
+    itemViewContainer: '.categories-menu',
+    itemView: Category
+
   });
 
 });
@@ -7575,17 +7706,31 @@ define('views/categories/list',[
 require([
   'app',
 
+  'collections/categories',
+
   'views/map/map',
   'views/categories/list'
 ], function(
   app,
+
+  categoriesList,
+
   MapView,
-  CategoriesView
+  CategoriesListView
 ) {
 
+  app.addRegions({
+    header: 'header',
+    map: '#map-wrapper',
+    categories: '#categories-menu'
+  });
+
   app.addInitializer(function() {
-    new MapView();
-    new CategoriesView();
+    var categories = new CategoriesListView({collection: categoriesList});
+    var map = new MapView();
+
+    app.map.show(map);
+    app.categories.show(categories);
   });
 
   app.start();

@@ -8,7 +8,7 @@ define([
   app
 
 ) {
-  return Backbone.Model.extend({
+  return Backbone.Collection.extend({
     url: app.api('issues')
   });
 });
