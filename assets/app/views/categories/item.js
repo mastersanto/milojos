@@ -7,7 +7,15 @@ define([
 
   return Marionette.ItemView.extend({
     template: tpl('categories/templates/item.html'),
-    tagName: 'li'
+    tagName: 'li',
+
+    events: {
+      'touchstart .category-item': 'onCategoryTouch'
+    },
+
+    onCategoryTouch: function(evt) {
+      evt.preventDefault();
+    }
   });
 
 });

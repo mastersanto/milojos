@@ -29,12 +29,13 @@ define([
 
     mapInit:function(currentPosition){
       var coords;
+      var params = {
+        lat: currentPosition.coords.latitude,
+        lng: currentPosition.coords.longitude
+      };
 
       this.userPosition = currentPosition;
-      coords = new google.maps.LatLng(
-        this.userPosition.coords.latitude,
-        this.userPosition.coords.longitude
-      );
+      coords = new google.maps.LatLng(params.lat, params.lng);
 
       this.map = new google.maps.Map(this.$el[0], {
         center: coords,
@@ -42,15 +43,17 @@ define([
         mapTypeId: google.maps.MapTypeId.ROADMAP
       });
 
-      this.collection.fetch().then(_.bind(this.addMarkers, this));
+      this.collection.fetch({data: $.param(params)})
+                     .then(_.bind(this.addMarkers, this));
     },
 
     addMarkers: function () {
       var map = this.map;
 
       this.collection.forEach(function(issue) {
+        var loc = issue.get('loc');
         new google.maps.Marker({
-          position: new google.maps.LatLng(issue.get('lat'), issue.get('lng')),
+          position: new google.maps.LatLng(loc.lat, loc.lng),
           map: map,
           title: issue.get('title')
         });
