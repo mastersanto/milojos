@@ -3,9 +3,10 @@ components/
 bower_components/
 dist/
 build/
-assets/prod/
-assets/debug/
+public/prod/
+public/debug/
 .sass-cache/
 .DS_Store/
-assets/css/main.css
-assets/debug/
+public/css/main.css
+public/debug/
+public/components/
