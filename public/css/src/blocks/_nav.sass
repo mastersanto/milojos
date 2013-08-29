@@ -1,0 +1,78 @@
+nav
+  position: absolute
+  z-index: 200
+  right: 0
+  bottom: 0
+  left: 0
+  .report-menu
+    > li
+      position: relative
+      &:hover
+        ul.categories-menu
+          display: block
+      > a
+        display: block
+        text-align: center
+        height: emCalc(50px)
+        line-height: emCalc(50px)
+        text-decoration: none
+        font:
+          size: emCalc(20px)
+          weight: bold
+    ul.categories-menu
+      display: none
+      background-color: $gray-transparent
+      position: absolute
+      right: 0
+      bottom: 100%
+      left: 0
+      li
+        display: inline-block
+        width: 33.33%
+        a
+          display: block
+          padding: emCalc(10px)
+          text-align: center
+          text-decoration: none
+          color: white
+          &.raponazo-btn:active
+            background-color: $raponazo-color
+            span
+              @include icons-mobile-sprite(report_raponazo_over)
+          &.atraco-btn:active
+            background-color: $atraco-color
+            span
+              @include icons-mobile-sprite(report_atraco_over)
+          &.residencia-btn:active
+            background-color: $residencia-color
+            span
+              @include icons-mobile-sprite(report_residencia_over)
+          &.vehiculo-btn:active
+            background-color: $vehiculo-color
+            span
+              @include icons-mobile-sprite(report_vehiculo_over)
+          &.paseo-btn:active
+            background-color: $paseo-color
+            span
+              @include icons-mobile-sprite(report_paseo_over)
+          &.otros-btn:active
+            background-color: $otros-color
+            span
+              @include icons-mobile-sprite(report_otros_over)
+          span
+            display: block
+            width: 40px
+            height: 39px
+            margin: 0 auto emCalc(10px)
+            &.icon-raponazo
+              @include icons-mobile-sprite(report_raponazo)
+            &.icon-atraco
+              @include icons-mobile-sprite(report_atraco)
+            &.icon-residencia
+              @include icons-mobile-sprite(report_residencia)
+            &.icon-vehiculo
+              @include icons-mobile-sprite(report_vehiculo)
+            &.icon-paseo
+              @include icons-mobile-sprite(report_paseo)
+            &.icon-otros
+              @include icons-mobile-sprite(report_otros)
