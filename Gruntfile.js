@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
-    clean: [ "assets/debug/", "assets/prod/" ],
+    clean: [ "public/debug/", "public/prod/" ],
 
     watch: {
        files: '<config:jshint.all>',
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         eqnull: true
       },
       all: [
-        "build/config.js", "app/**/*.js"
+        "public/build/config.js", "app/**/*.js"
       ]
     },
 
@@ -23,8 +23,8 @@ module.exports = function(grunt) {
       compile: {
         options: {},
         files: {
-          "assets/debug/templates.js": [
-            "assets/app/views/**/templates/*.html"
+          "public/debug/templates.js": [
+            "public/app/views/**/templates/*.html"
           ]
         }
       }
@@ -33,8 +33,8 @@ module.exports = function(grunt) {
     requirejs: {
       compile: {
         options: {
-          mainConfigFile: "assets/app/config.js",
-          out: "assets/debug/require.build.js",
+          mainConfigFile: "public/app/config.js",
+          out: "public/debug/require.build.js",
           name: "config",
           wrap: false,
           optimize: "none"
@@ -43,17 +43,17 @@ module.exports = function(grunt) {
     },
 
     concat: {
-      "assets/debug/main.js": [
-        "components/almond/almond.js",
-        "assets/debug/templates.js",
-        "assets/debug/require.build.js"
+      "public/debug/main.js": [
+        "public/components/almond/almond.js",
+        "public/debug/templates.js",
+        "public/debug/require.build.js"
       ]
     },
 
     uglify: {
       my_target: {
         files: {
-          'assets/prod/main.js': ['assets/debug/main.js']
+          'public/prod/main.js': ['public/debug/main.js']
         }
       }
     }
@@ -66,7 +66,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-remove-logging');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   grunt.registerTask('default', [
@@ -76,5 +75,4 @@ module.exports = function(grunt) {
   grunt.registerTask('release', [
     'default', 'uglify'
   ]);
-
 };
