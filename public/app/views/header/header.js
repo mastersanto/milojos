@@ -18,11 +18,11 @@ define([
     },
     toogleFilters: function() {
       $('#wrapper').toggleClass('to-right');
-      $('#filters-wrapper').toggleClass('active');
+      $('#filters-wrapper').toggleClass('hide');
     },
     toogleSettings: function() {
       $('#wrapper').toggleClass('to-left');
-      $('#settings-wrapper').toggleClass('active');
+      $('#settings-wrapper').toggleClass('hide');
     },
 	  onRender: function(){
 	  	// el

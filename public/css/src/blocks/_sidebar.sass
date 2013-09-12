@@ -1,0 +1,33 @@
+.sidebar
+  //background-color: $gray
+  //@include padding-block
+  //position: relative
+  //z-index: 100
+  //width: 20%
+  .sidebar-title
+    color: black
+    @include background-image(linear-gradient(white, $gray))
+    margin: 0
+    padding: emCalc(5px)
+    font-size: emCalc(20px)
+  .sidebar-subtitle
+    color: white
+    @include background-image(linear-gradient($gray, black))
+    font-size: emCalc(16px)
+    border-top: 1px solid #666
+    border-bottom: 1px solid black
+    margin: 0 0 emCalc(10px)
+    padding: emCalc(5px)
+  label
+    color: white
+    display: inline-block
+    margin: 0 0 emCalc(10px)
+  .menu
+    padding: 0
+    list-style: none
+    li,
+    div
+      padding: emCalc(5px)
+      a
+        color: white
+        text-decoration: none
